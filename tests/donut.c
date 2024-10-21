@@ -12,8 +12,8 @@ const float phi_spacing = 0.02;
 const float R1 = 1;
 const float R2 = 2;
 const float K2 = 5;
-const int screen_width = 100;
-const int screen_height = 60;
+const int screen_width = 50;
+const int screen_height = 50;
 const float K1 = screen_width * K2 * 3 / (8 * (R1 + R2));
 
 void render_frame(float A, float B) {
@@ -72,6 +72,6 @@ void render_frame(float A, float B) {
 }
 
 int main() {
-    render_frame(0.5, 0.5);
+    render_frame(1.5, 1.5);
     return 1;
 }
