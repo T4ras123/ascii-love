@@ -13,18 +13,17 @@ const float R1 = 1;
 const float R2 = 2;
 const float K2 = 5;
 const int screen_width = 50;
-const int screen_height = 50;
 const float K1 = screen_width * K2 * 3 / (8 * (R1 + R2));
 
 void render_frame(float A, float B) {
     float cosA = cos(A), sinA = sin(A);
     float cosB = cos(B), sinB = sin(B);
 
-    char output[screen_width][screen_height];
-    float zbuffer[screen_width][screen_height];
+    char output[screen_width][screen_width];
+    float zbuffer[screen_width][screen_width];
 
     for (int i = 0; i < screen_width; i++) {
-        for (int j = 0; j < screen_height; j++) {
+        for (int j = 0; j < screen_width; j++) {
             output[i][j] = ' ';
             zbuffer[i][j] = 0.0f;
         }
@@ -47,7 +46,7 @@ void render_frame(float A, float B) {
             float ooz = 1/z;
 
             int xp = (int) (screen_width/2 + K1*ooz*x);
-            int yp = (int) (screen_height/2 - K1*ooz*y);
+            int yp = (int) (screen_width/2 - K1*ooz*y);
 
 
             float L = cosphi*costheta*sinB - cosA*costheta*sinphi - sinA*sintheta + cosB*(cosA*sintheta - costheta*sinA*sinphi);
@@ -63,7 +62,7 @@ void render_frame(float A, float B) {
         }
     }
     printf("\x1b[H");
-    for (int j = 0; j < screen_height; j++) {
+    for (int j = 0; j < screen_width; j++) {
         for (int i = 0; i < screen_width; i++) {
         putchar(output[i][j]);
         }
