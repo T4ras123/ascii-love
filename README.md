@@ -2,23 +2,24 @@
 
 A collection of ASCII art animations rendered in the terminal, including spinning donuts and hearts.
 
+![ASCII Heart Animation](media/heart.gif)
+
 ## Features
 
 - **Spinning Donut**: Renders a rotating three-dimensional donut using ASCII characters.
-- **Spinning Heart**: Displays a heart shape that rotates, creating a mesmerizing animation.
+- **Spinning Heart**: Displays a heart shape that rotates around both the X and Y axes, creating a mesmerizing animation.
 
 ## Requirements
 
 - **Operating System**: Linux
 - **Compiler**: GCC
-- **Libraries**: `math.h`, `stdio.h`
+- **Libraries**: `math.h`, `stdio.h`, `unistd.h`
 
 ## Compilation
 
 To compile the programs, use the following commands:
 
 ```sh
-gcc -o donut tests/donut.c -lm
 gcc -o heart heart.c -lm
 ```
 
@@ -27,7 +28,6 @@ gcc -o heart heart.c -lm
 Run the executables in the terminal:
 
 ```sh
-./donut
 ./heart
 ```
 
