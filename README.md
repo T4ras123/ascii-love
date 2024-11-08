@@ -2,8 +2,9 @@
 
 A collection of ASCII art animations rendered in the terminal, including spinning donuts and hearts.
 
-![ASCII Heart Animation](media/heart.gif)
-
+<p align="center">
+  <img src="media/ezgif-6-eb50f9e220.gif", alt="ASCII Heart Animation">
+</p>
 ## Features
 
 - **Spinning Donut**: Renders a rotating three-dimensional donut using ASCII characters.
