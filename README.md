@@ -1,10 +1,13 @@
 # ascii-love
 
+A way for you to express your love through something you love.
+
 ASCII heart animation rendered in the terminal.
 
-<p align="center">
-  <img src="media/ezgif-6-eb50f9e220.gif", alt="ASCII Heart Animation">
-</p>
+  <p align="center">
+    <img src="media/ezgif-6-eb50f9e220.gif", alt="ASCII Heart Animation">
+  </p>
+
 ## Features
 
 - **Spinning Heart**: Displays a heart shape that rotates around both the X and Y axes, creating a mesmerizing animation.
