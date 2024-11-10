@@ -94,9 +94,7 @@ void render_frame(float A, float B){
     // Print the output array
     printf("\x1b[H");
     for (int i = 0; i < SCREEN_HEIGHT; i++) {
-        for (int j = 0; j < SCREEN_WIDTH; j++) {
-            putchar(output[i][j]);
-        }
+        fwrite(output[i], 1, SCREEN_WIDTH, stdout);
         putchar('\n');
     }
 }
