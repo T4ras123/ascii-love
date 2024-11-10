@@ -1,7 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#if _WIN32
+#include <windows.h>
+#include <stdlib.h>
+static DWORD con_output_mode_orig;
+static HANDLE out;
+
+void term_restore(void) {
+    SetConsoleMode(out, con_output_mode_orig);
+}
+
+void term_init(void) {
+    out = GetStdHandle(STD_OUTPUT_HANDLE);
+    GetConsoleMode(out, &con_output_mode_orig);
+    SetConsoleMode(
+        out, 
+        ENABLE_PROCESSED_OUTPUT 
+        | ENABLE_VIRTUAL_TERMINAL_PROCESSING
+    );
+    SetConsoleOutputCP(CP_UTF8);
+    atexit(term_restore);
+}
+
+void usleep(int microseconds) {
+    Sleep(microseconds/1000);
+}
+
+#else
 #include <unistd.h>
+#endif
 
 #define SCREEN_WIDTH 150
 #define SCREEN_HEIGHT 40
