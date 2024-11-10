@@ -132,14 +132,17 @@ void render_frame(float A, float B){
 int main() {
     float A = 0;
     float B = 0;
+    printf("\e[?25l"); // hide cursor
+    term_init();
     while (1) {
         clear_screen();
         render_frame(A, B);
-        usleep(45000); // Delay for smooth animation
+        usleep(16000); // Delay for smooth animation
         A += 0.05;     // Rotation speed around X-axis
         B += 0.03;     // Rotation speed around Y-axis
         if (A > 2 * PI) A -= 2 * PI;
         if (B > 2 * PI) B -= 2 * PI;
     }
+    printf("\e[?25h"); // show cursor
     return 0;
 }
