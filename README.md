@@ -8,6 +8,8 @@ ASCII heart animation rendered in the terminal.
   <img src="media/heart.gif", alt="ASCII Heart Animation">
 </p>
 
+> #### You can download [video](heart_video.mp4) if you want just that and skip the hustle of compiling and recording. 
+
 ## Features
 
 - **Spinning Heart**: Displays a heart shape that rotates around both the X and Y axes, creating a mesmerizing animation.
